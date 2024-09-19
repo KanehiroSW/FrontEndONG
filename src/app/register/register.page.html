@@ -1,0 +1,40 @@
+<ion-header></ion-header>
+
+<ion-content padding style="--background: #225AC7;">
+  <!-- Contenedor circular para la imagen -->
+  <div class="circle-container">
+    <img src="assets/location.png" alt="Logo" />
+  </div>
+
+  <div class="welcome-container">
+    <h1 class="welcome-text">CREATE ACCOUNT</h1>
+  </div>
+
+  <div class="form-container">
+    <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+      <div class="input-container">
+        <!-- Campo de celular -->
+        <ion-item class="input-item">
+          <ion-icon name="call-outline" slot="start" class="input-icon"></ion-icon>
+          <ion-input type="text" placeholder="Celular" [(ngModel)]="phone" name="phone" required></ion-input>
+        </ion-item>
+
+        <!-- Campo de usuario -->
+        <ion-item class="input-item">
+          <ion-icon name="person-circle-outline" slot="start" class="input-icon"></ion-icon>
+          <ion-input type="text" placeholder="Usuario" [(ngModel)]="username" name="username" required></ion-input>
+        </ion-item>
+
+        <!-- Campo de contraseña -->
+        <ion-item class="input-item">
+          <ion-icon name="lock-closed-outline" slot="start" class="input-icon"></ion-icon>
+          <ion-input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required></ion-input>
+          <ion-icon name="eye-outline" slot="end" class="input-icon"></ion-icon>
+        </ion-item>
+      </div>
+    </form>
+
+    <ion-button class="button-create" expand="block" routerLink="/login">Register</ion-button>
+  </div>
+</ion-content>
+
